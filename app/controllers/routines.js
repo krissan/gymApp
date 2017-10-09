@@ -1,8 +1,10 @@
-var Routine = require('../models/Routine');
+var Routine = require('../models/routine');
  
 exports.getRoutine = function(req, res, next){
  
-    Routine.find(function(err, routines) {
+    Routine.find({
+        userid : req.params.user_id
+    }, function(err, routines) {
  
         if (err){
             res.send(err);
@@ -17,16 +19,16 @@ exports.getRoutine = function(req, res, next){
 exports.createRoutine = function(req, res, next){
  
     Routine.create({
-        routine : req.body.routine,
-        routine : req.body.sets
-
+        routine : req.body.routine.routineName,
+        sets : req.body.routine.sets,
+        userid: req.body.routine.userid
     }, function(err, routine) {
  
         if (err){
             res.send(err);
         }
  
-        Todo.find(function(err, routines) {
+        Routine.find(function(err, routines) {
  
             if (err){
                 res.send(err);
@@ -37,12 +39,12 @@ exports.createRoutine = function(req, res, next){
         });
  
     });
- 
+
 }
  
 exports.deleteRoutine = function(req, res, next){
  
-    routine.remove({
+    Routine.remove({
         _id : req.params.routine_id
     }, function(err, routine) {
         res.json(routine);

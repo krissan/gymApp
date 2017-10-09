@@ -1,35 +1,7 @@
 var mongoose = require('mongoose');
- 
-var RoutineSchema = new mongoose.Schema({
- 
-    routine: {
-        type: String,
-        lowercase: true,
-        unique: true,
-        required: true
-    },
-    sets: [SubRoutineSchema]
-}, {
-    timestamps: true
-});
 
-var SubRoutineSchema = new mongoose.Schema({
-    set: SetSchema,
-    repAmount: {
-        type: Array
-    },
-    setTime: {
-    	type: Number
-    },
-    restTime: {
-    	type: Number
-    } 
-}, {
-    timestamps: true
-});
- 
 var SetSchema = new mongoose.Schema({
-    set: {
+    setName: {
         type: String,
         lowercase: true,
         unique: true,
@@ -39,6 +11,31 @@ var SetSchema = new mongoose.Schema({
     timestamps: true
 });
 
+var SubRoutineSchema = new mongoose.Schema({
+    setExercise: String,
+    repAmount: {
+        type: Number
+    },
+    setTime: {
+        type: Number
+    }
+}, {
+    timestamps: true
+});
+ 
+var RoutineSchema = new mongoose.Schema({
+    routine: {
+        type: String,
+        lowercase: true,
+        unique: true,
+        required: true
+    },
+    sets: [SubRoutineSchema],
+    userid: String
+}, {
+    timestamps: true
+});
+
 module.exports = mongoose.model('Routine', RoutineSchema);
 module.exports = mongoose.model('SubRoutine', SubRoutineSchema);
-module.exports = mongoose.model('Set', SetSchema);
+module.exports = mongoose.model('SetExercise', SetSchema);

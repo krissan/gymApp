@@ -26,8 +26,8 @@ module.exports = function(app){
     // Todo Routes
     apiRoutes.use('/routines', routineRoutes);
  
-    routineRoutes.get('/', requireAuth, AuthenticationController.roleAuthorization(['normal','super']), routineController.getRoutines);
-    routineRoutes.post('/', requireAuth, AuthenticationController.roleAuthorization(['normal','super']), routineController.createRoutine);
+    routineRoutes.get('/:user_id', requireAuth, AuthenticationController.roleAuthorization(['normal','super']), RoutineController.getRoutine);
+    routineRoutes.post('/', requireAuth, AuthenticationController.roleAuthorization(['normal','super']), RoutineController.createRoutine);
     routineRoutes.delete('/:routine_id', requireAuth, AuthenticationController.roleAuthorization(['normal','super']), RoutineController.deleteRoutine);
  
     // Set up routes
