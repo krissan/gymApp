@@ -17,7 +17,6 @@ exports.getRoutine = function(req, res, next){
 }
  
 exports.createRoutine = function(req, res, next){
- 
     Routine.create({
         routine : req.body.routine.routineName,
         sets : req.body.routine.subroutines,
@@ -25,7 +24,7 @@ exports.createRoutine = function(req, res, next){
     }, function(err, routine) {
  
         if (err){
-            res.send(err);
+            res.send(err + "+++" + req.body.routine.subroutines);
         }
  
         Routine.find(function(err, routines) {
