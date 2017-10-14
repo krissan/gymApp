@@ -17,6 +17,12 @@ exports.getRoutine = function(req, res, next){
 }
  
 exports.createRoutine = function(req, res, next){
+    // var subroutTemp;
+    // for (subrout in req.body.subroutines)
+    // {
+    //     subroutTemp = {}
+    // }
+
     Routine.create({
         routine : req.body.routineName,
         sets : req.body.subroutines,

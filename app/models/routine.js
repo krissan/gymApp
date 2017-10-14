@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var SetSchema = new mongoose.Schema({
+/*var SetSchema = new mongoose.Schema({
     setName: {
         type: String,
         lowercase: true,
@@ -9,7 +9,7 @@ var SetSchema = new mongoose.Schema({
     }
 }, {
     timestamps: true
-});
+});*/
 
 var SubRoutineSchema = new mongoose.Schema({
     setExercise: String,
@@ -38,4 +38,4 @@ var RoutineSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('Routine', RoutineSchema);
 module.exports = mongoose.model('SubRoutine', SubRoutineSchema);
-module.exports = mongoose.model('SetExercise', SetSchema);
+//module.exports = mongoose.model('SetExercise', SetSchema);
