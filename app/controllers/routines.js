@@ -18,13 +18,13 @@ exports.getRoutine = function(req, res, next){
  
 exports.createRoutine = function(req, res, next){
     Routine.create({
-        routine : req.body.routine.routineName,
-        sets : req.body.routine.subroutines,
-        userid: req.body.routine.userid
+        routine : req.body.routineName,
+        sets : req.body.subroutines,
+        userid: req.body.userid
     }, function(err, routine) {
  
         if (err){
-            res.send(err + "+++" + req.body.routine.subroutines);
+            res.send(err);
         }
  
         Routine.find(function(err, routines) {
@@ -42,12 +42,10 @@ exports.createRoutine = function(req, res, next){
 }
  
 exports.deleteRoutine = function(req, res, next){
- 
     Routine.remove({
         _id : req.params.routine_id
     }, function(err, routine) {
         res.json(routine);
     });
- 
 }
 
