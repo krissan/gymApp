@@ -17,6 +17,13 @@ exports.getRoutine = function(req, res, next){
 }
  
 exports.createRoutine = function(req, res, next){
+    var subrouts = Array.from(req.body.subroutines);
+    var readSubrouts = [];
+    for (subrout in subrouts)
+    {
+        
+    }
+
     Routine.create({
         routine : req.body.routineName,
         sets : req.body.subroutines,
@@ -33,7 +40,7 @@ exports.createRoutine = function(req, res, next){
                 res.send(err);
             }
  
-            res.json(routines + JSON.stringify(req.body.routineName)+ JSON.stringify(req.body.subroutines)+ JSON.stringify(req.body.userid));
+            res.json(routines + JSON.stringify(req.body.routineName[0]) ++ "++" ++ a);
 
  
         });
