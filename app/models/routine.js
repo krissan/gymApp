@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Routine = require('../models/subroutine');
+var SubRoutine = require('../models/subroutine');
  
 var RoutineSchema = new mongoose.Schema({
     routine: {
@@ -8,7 +8,7 @@ var RoutineSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
-    sets: [SubRoutineSchema],
+    sets: [SubRoutine.SubRoutineSchema],
     userid: String
 }, {
     timestamps: true
