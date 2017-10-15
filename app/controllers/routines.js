@@ -34,12 +34,8 @@ exports.createRoutine = function(req, res, next){
             }
  
             res.json(routines + JSON.stringify(req.body));
-
- 
         });
- 
     });
-
 }
  
 exports.deleteRoutine = function(req, res, next){
