@@ -28,7 +28,7 @@ exports.createRoutine = function(req, res, next){
             res.send(err);
         }
  
-        Routine.find(function(err, routines) {
+        models.Routine.find(function(err, routines) {
  
             if (err){
                 res.send(err);
