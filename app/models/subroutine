@@ -1,0 +1,15 @@
+var mongoose = require('mongoose');
+
+var SubRoutineSchema = new mongoose.Schema({
+    setExercise: String,
+    repAmount: {
+        type: Number
+    },
+    setTime: {
+        type: Number
+    }
+}, {
+    timestamps: true
+});
+
+module.exports = mongoose.model('SubRoutine', SubRoutineSchema);

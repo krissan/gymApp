@@ -1,27 +1,5 @@
 var mongoose = require('mongoose');
-
-/*var SetSchema = new mongoose.Schema({
-    setName: {
-        type: String,
-        lowercase: true,
-        unique: true,
-        required: true
-    }
-}, {
-    timestamps: true
-});*/
-
-var SubRoutineSchema = new mongoose.Schema({
-    setExercise: String,
-    repAmount: {
-        type: Number
-    },
-    setTime: {
-        type: Number
-    }
-}, {
-    timestamps: true
-});
+var Routine = require('../models/subroutine');
  
 var RoutineSchema = new mongoose.Schema({
     routine: {
@@ -36,7 +14,5 @@ var RoutineSchema = new mongoose.Schema({
     timestamps: true
 });
 
-const Routine = mongoose.model('Routine', RoutineSchema);
-const SubRoutine = mongoose.model('SubRoutine', SubRoutineSchema);
-module.exports = {Routine, SubRoutine};
+module.exports = mongoose.model('Routine', RoutineSchema);
 //module.exports = mongoose.model('SetExercise', SetSchema);
