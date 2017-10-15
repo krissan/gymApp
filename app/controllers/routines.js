@@ -33,7 +33,8 @@ exports.createRoutine = function(req, res, next){
                 res.send(err);
             }
  
-            res.json(routines + JSON.stringify(req.body));
+            res.json(routines + JSON.stringify(req.body.routineName)+ JSON.stringify(req.body.subroutines)+ JSON.stringify(req.body.userid));
+
  
         });
  
