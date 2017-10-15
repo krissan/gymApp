@@ -27,4 +27,4 @@ var RoutineSchema = new mongoose.Schema({
 
 var Routine = mongoose.model('Routine', RoutineSchema);
 var SubRoutine = mongoose.model('SubRoutine', SubRoutineSchema);
-module.exports = { Routine: Routine, SubRoutine: Subroutine };
+module.exports = { Routine: Routine, SubRoutine: SubRoutine };
