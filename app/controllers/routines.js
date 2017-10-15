@@ -19,7 +19,7 @@ exports.getRoutine = function(req, res, next){
 exports.createRoutine = function(req, res, next){
     Routine.create({
         routine : req.body.routineName,
-        //sets : req.body.subroutines,
+        sets : req.body.subroutines,
         userid: req.body.userid
     }, function(err, routine) {
  

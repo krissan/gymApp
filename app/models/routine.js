@@ -30,7 +30,7 @@ var RoutineSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
-    //sets: [SubRoutineSchema],
+    sets: [SubRoutineSchema],
     userid: String
 }, {
     timestamps: true
