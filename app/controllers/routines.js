@@ -3,7 +3,7 @@ var Routine = require('../models/routine');
 exports.getRoutine = function(req, res, next){
  
     Routine.find({
-        //userid : req.params.user_id
+        userid : req.params.user_id
     }, function(err, routines) {
  
         if (err){
