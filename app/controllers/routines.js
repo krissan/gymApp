@@ -1,8 +1,8 @@
-var Routine = require('../models/routine');
+var models = require('../models/routine');
  
 exports.getRoutine = function(req, res, next){
  
-    Routine.find({
+    models.Routine.find({
         userid : req.params.user_id
     }, function(err, routines) {
  
@@ -17,7 +17,7 @@ exports.getRoutine = function(req, res, next){
 }
  
 exports.createRoutine = function(req, res, next){
-    Routine.create({
+    models.Routine.create({
         routine : req.body.routineName,
         sets : req.body.subroutines,
         userid: req.body.userid
@@ -39,7 +39,7 @@ exports.createRoutine = function(req, res, next){
 }
  
 exports.deleteRoutine = function(req, res, next){
-    Routine.remove({
+    models.Routine.remove({
         _id : req.params.routine_id
     }, function(err, routine) {
         res.json(routine);
