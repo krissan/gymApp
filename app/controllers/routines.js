@@ -1,3 +1,4 @@
+var mongoose = require('mongoose');
 var models = require('../models/routine');
  
 exports.getRoutine = function(req, res, next){

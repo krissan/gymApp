@@ -25,6 +25,6 @@ var RoutineSchema = new mongoose.Schema({
     timestamps: true
 });
 
-const Routine = mongoose.model('Routine', RoutineSchema);
-const SubRoutine = mongoose.model('SubRoutine', SubRoutineSchema);
+var Routine = mongoose.model('Routine', RoutineSchema);
+var SubRoutine = mongoose.model('SubRoutine', SubRoutineSchema);
 module.exports = { Routine: Routine, SubRoutine: Subroutine };
