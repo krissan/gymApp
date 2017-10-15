@@ -17,13 +17,6 @@ exports.getRoutine = function(req, res, next){
 }
  
 exports.createRoutine = function(req, res, next){
-    /*var subrouts = Array.from(req.body.subroutines);
-    var readSubrouts = [];
-    for (subrout in subrouts)
-    {
-
-    }*/
-
     Routine.create({
         routine : req.body.routineName,
         sets : req.body.subroutines,
