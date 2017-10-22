@@ -56,8 +56,7 @@ exports.editRoutine = function(req, res, next){
     }, 
     {   routine : req.body.routineName,
         sets : req.body.subroutines
-    })
-    , function(err, routine) {
+    }, function(err, routine) {
         if (err){
             res.send(err);
         }
