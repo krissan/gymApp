@@ -12,7 +12,6 @@ exports.getRoutine = function(req, res, next){
         }
  
         res.json(routines);
- 
     });
  
 }
@@ -21,7 +20,7 @@ exports.createRoutine = function(req, res, next){
     models.Routine.create({
         routine : req.body.routineName,
         sets : req.body.subroutines,
-        userid: req.body.userid
+        userid : req.body.userid
     }, function(err, routine) {
  
         if (err){
@@ -43,7 +42,26 @@ exports.deleteRoutine = function(req, res, next){
     models.Routine.remove({
         _id : req.params.routine_id
     }, function(err, routine) {
+        if (err){
+            res.send(err);
+        }
+
         res.json(routine);
     });
 }
 
+exports.editRoutine = function(req, res, next){
+    models.Routine.findOneAndUpdate({
+        _id: req.params.routine_id
+    }, 
+    {   routine : req.body.routineName,
+        sets : req.body.subroutines
+    })
+    , function(err, routine) {
+        if (err){
+            res.send(err);
+        }
+        
+        res.json(routine);
+    });
+}

@@ -29,6 +29,7 @@ module.exports = function(app){
     routineRoutes.get('/:user_id', requireAuth, AuthenticationController.roleAuthorization(['normal','super']), RoutineController.getRoutine);
     routineRoutes.post('/', requireAuth, AuthenticationController.roleAuthorization(['normal','super']), RoutineController.createRoutine);
     routineRoutes.delete('/:routine_id', requireAuth, AuthenticationController.roleAuthorization(['normal','super']), RoutineController.deleteRoutine);
+    routineRoutes.post('/:routine_id', requireAuth, AuthenticationController.roleAuthorization(['normal','super']), RoutineController.editRoutine);
  
     // Set up routes
     app.use('/api', apiRoutes);
