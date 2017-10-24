@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="secondary">
+  <ion-title>
+    Routines
+  </ion-title>
+  <ion-buttons end>
+    <button ion-button icon-only (click)="addRoutine()"><ion-icon name="add"></ion-icon></button>
+  </ion-buttons>
+  <ion-buttons start>
+    <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let rout of routines; let i=index">
+      <ion-card-header>
+        {{routines[i].routineName}}
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row *ngFor="let set of routines[i].sets; let j=index">
+      		<ion-col fixed>Set Name: {{routines[i].sets[j].setExercise}}</ion-col>
+      		<ion-col fixed>Rep Count: {{routines[i].sets[j].repAmount}}</ion-col>
+      		<ion-col fixed>Set Time: {{routines[i].sets[j].setTime}}</ion-col>
+        </ion-row>
+        <ion-col>
+          <button ion-button color="danger" (click)="deleteRoutine(routines[i])">
+              <ion-icon name="trash"></ion-icon>
+              Delete
+          </button>
+          <button ion-button color="balanced" (click)="editRoutine(routines[i])">
+              <ion-icon md="md-create"></ion-icon>
+              Edit
+          </button>
+        </ion-col>
+      </ion-card-content>
+  </ion-card>
+</ion-content>
