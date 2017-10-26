@@ -14,7 +14,7 @@
 	<form [formGroup]="myForm" novalidate (ngSubmit)="submitModal(myForm)">
 		<div class="form-group">
 			<label>Routine Name</label>
-			<input type="text" formControlName="routineName" value="{{routine.routineName}}">
+			<input type="text" formControlName="routineName" value="{{routineO.routineName}}">
 
 			<small *ngIf="!myForm.controls.routineName.valid" class="text-danger">
 				Name is required (minimum 6 characters).
@@ -43,16 +43,16 @@
 						<ion-label>Set {{i+1}}</ion-label>
 					</ion-col>
 					<ion-col>
-						<ion-input type="text" formControlName="setExercise" placeholder="Exercise" value="{{routine.sets[i].setExercise}}"></ion-input>
+						<ion-input type="text" formControlName="setExercise" placeholder="Exercise" value="{{routineO.sets[i].setExercise}}"></ion-input>
 						<small [hidden]="myForm.controls.subroutines.controls[i].controls.setExercise.valid">
 							Set Exercise is required
 						</small>
 					</ion-col>
 					<ion-col>
-						<ion-input type="number" formControlName="repAmount" min="0" value="{{routine.sets[i].repAmount}}"></ion-input>
+						<ion-input type="number" formControlName="repAmount" min="0" value="{{routineO.sets[i].repAmount}}"></ion-input>
 					</ion-col>
 					<ion-col>
-						<ion-input type="number" formControlName="setTime" min="0" value="{{routine.sets[i].setTime}}"></ion-input>
+						<ion-input type="number" formControlName="setTime" min="0" value="{{routineO.sets[i].setTime}}"></ion-input>
 					</ion-col>	
 					<ion-col>
 						<button ion-button color="danger" *ngIf="myForm.controls.subroutines.controls.length > 1" (click)="removeSubRoutine(i)"> <ion-icon name="trash"></ion-icon> </button>

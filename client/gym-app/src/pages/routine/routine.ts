@@ -17,34 +17,33 @@ import { Validators, FormGroup, FormArray, FormBuilder } from '@angular/forms';
   templateUrl: 'routine.html',
 })
 export class RoutinePage {
-  public myForm: FormGroup;
-  edit: boolean;
-  routine: RoutineModel;
+  public myForm: FormGroup;    //Routine Form
+  edit: boolean;               //Is routine meant to be edit of existing
+  routineO: RoutineModel;      //Routine Model
 
   constructor(public viewCtrl: ViewController, public navParams: NavParams, private _fb: FormBuilder) {
-    let rout = new SubRoutine("",0,0);
-    this.routine = new RoutineModel("", [rout]);
+    //Instantiate empty routine object
+    this.routineO = new RoutineModel("", [], "");
 
+    //Instantiate form for routine inputs
     this.myForm = this._fb.group({
       routineName: ['', [Validators.required, Validators.minLength(6)]],
-      subroutines: this._fb.array([
-        this.initSubRoutine(),
-        ]),
-      rid: ['']
+      subroutines: this._fb.array([])
     });
 
+    //If recieved navparams then routine meant to be edit
     if(navParams.get('routine') != null)
     {
       this.edit = navParams.get('edit');
-      this.routine = navParams.get('routine');
 
+      //Populate form with routine to be editeds routine name and sets
+      this.routineO.routineName = navParams.get('routine').routineName;
       this.myForm.patchValue({
-        routineName: this.routine.routineName,
-        rid: this.routine.rid
-      })
-
-      for(var i = 0; i < this.routine.sets.length-1; i++)
+        routineName: this.routineO.routineName
+      })      
+      for(var i = 0; i < navParams.get('routine').sets.length ; i++)
       {
+        this.routineO.sets.push(navParams.get('routine').sets[i]);
         this.addSubRoutine(false);
       }
     }
@@ -55,8 +54,8 @@ export class RoutinePage {
     this.viewCtrl.dismiss();
   }
 
+  //Pass routine data back to caller
   submitModal(formi) {
-    console.log(JSON.stringify(formi.value));
     this.viewCtrl.dismiss({routineName: formi.value.routineName, subroutines: formi.value.subroutines, rid: formi.value.rid});
   }
 
@@ -64,6 +63,7 @@ export class RoutinePage {
     console.log('ionViewDidLoad RoutinePage');
   }
 
+  //Initialize form set
   initSubRoutine(){
     return this._fb.group({
       setExercise:['', Validators.required],
@@ -71,19 +71,23 @@ export class RoutinePage {
       setTime:['']
     });
   }
+
+  //Add set to end of form
   addSubRoutine(addSub){
+    //If 
     if (addSub == true)
     {
       let rout = new SubRoutine("default",0,0);
-      this.routine.sets.push(rout);
+      this.routineO.sets.push(rout);
     }
     const control = <FormArray>this.myForm.controls['subroutines'];
     control.push(this.initSubRoutine());
   }
 
+  //Remove set from form and routineO array
   removeSubRoutine(i: number){
-    console.log(i-1);
     const control = <FormArray>this.myForm.controls['subroutines'];
     control.removeAt(i);
+    this.routineO.sets.splice(i,1);
   }
 }

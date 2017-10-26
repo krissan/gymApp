@@ -16,6 +16,7 @@ export class RoutinesProvider {
  
   }
 
+  //Retrieve users routines by userid from server by passing auth token in header
   getRoutines()
   {
   	return new Promise((resolve, reject) => {
@@ -32,16 +33,14 @@ export class RoutinesProvider {
   	});
   }
 
+  //Create routine in database, by passing routine and authorization header to server
   createRoutine(routine){
- 
     return new Promise((resolve, reject) => {
  
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       headers.append('Authorization', this.authService.token);
       
-      //convert routine to schema
-
       this.http.post('https://krissan-gym-app.herokuapp.com/api/routines', JSON.stringify(routine), {headers: headers})
         .map(res => res.json())
         .subscribe(res => {
@@ -52,6 +51,7 @@ export class RoutinesProvider {
     });
   }
 
+  //Delete routine in database, by passing  authorization header to server and routine id in url
   deleteRoutine(id){
     return new Promise((resolve, reject) => {
  
@@ -67,6 +67,7 @@ export class RoutinesProvider {
     });
   }
 
+  //Edit routine in database, by passing updated routine and authorization header to server with routines id in url
   editRoutine(routine){
     return new Promise((resolve, reject) => {
  
@@ -74,7 +75,6 @@ export class RoutinesProvider {
       headers.append('Content-Type', 'application/json');
       headers.append('Authorization', this.authService.token);
       
-      //convert routine to schema
       console.log(routine.rid);
       this.http.post('https://krissan-gym-app.herokuapp.com/api/routines/' + routine.rid, JSON.stringify(routine), {headers: headers})
         .map(res => res.json())

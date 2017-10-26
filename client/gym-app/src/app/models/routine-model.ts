@@ -1,3 +1,4 @@
+//Model for sets in routine model
 export class SubRoutine {
 	setExercise: string;
 	repAmount: number;
@@ -10,6 +11,7 @@ export class SubRoutine {
     }
 }
 
+//Model
 export class RoutineModel {
 	routineName: string;
 	sets: SubRoutine[];
