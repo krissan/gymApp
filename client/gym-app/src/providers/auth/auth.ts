@@ -12,13 +12,14 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthProvider {
 
-  public token: any;
-  public userid: any;
+  public token: any;  //Auth Token
+  public userid: any; //Users id
 
   constructor(public http: Http, public storage: Storage) {
     console.log('Hello AuthProvider Provider');
   }
 
+  //Check if user is authenticated, by passing localstorages token to server
   checkAuthentication(){
   	return new Promise((resolve, reject) => {
         //Load token if exists
@@ -41,6 +42,7 @@ export class AuthProvider {
     });
   }
 
+  //Check if userid is equal to userid in local storage
   checkUserId(){
     //Load token if exists
     this.storage.get('userid').then((value) => {
@@ -48,6 +50,7 @@ export class AuthProvider {
     });
   }
 
+  //Create account by sending details passed in to server and from response get token, storing it and userid in local storage
   createAccount(details){
  
     return new Promise((resolve, reject) => {
@@ -70,8 +73,8 @@ export class AuthProvider {
  
   }
  
+  //Login user by credentials passed in and from response get token, storing it and userid in local storage
   login(credentials){
- 
     return new Promise((resolve, reject) => {
  
         let headers = new Headers();
@@ -94,6 +97,7 @@ export class AuthProvider {
  
   }
  
+  //Logout user by clearing token and userid from storage
   logout(){
     this.storage.set('token', '');
     this.storage.set('userid', '');
