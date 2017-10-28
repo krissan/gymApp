@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 #.gitignore
 node_modules/
 platforms/
 plugins/
 .DS_Store
+=======
+node_modules/
+>>>>>>> ee554ea0376dbc782d13f15bf5642e8cb3537b62
