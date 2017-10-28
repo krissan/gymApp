@@ -7,9 +7,6 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
-  },
-    "scripts": {
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve"
   },
@@ -25,6 +22,8 @@
     "passport": "^0.3.2",
     "passport-jwt": "^2.1.0",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "^3.0.1"
   }
-
 }
