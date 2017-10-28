@@ -6,10 +6,6 @@
     "node": "6.0.0"
   },
   "main": "server.js",
-  "scripts": {
-    "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
-  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
@@ -23,7 +19,9 @@
     "passport-jwt": "^2.1.0",
     "passport-local": "^1.0.0"
   },
-  "devDependencies": {
-    "@ionic/app-scripts": "^3.0.1"
-  }
+  "scripts": {
+    "start": "node ./www.js",
+    "build": "grunt dist",
+    "postinstall": "./node_modules/bower/bin/bower install && npm run build"
+   }  
 }
