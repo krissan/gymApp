@@ -6,6 +6,11 @@
     "node": "6.0.0"
   },
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+    "build": "grunt dist",
+    "postinstall": "./node_modules/bower/bin/bower install && npm run build"
+  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
@@ -18,10 +23,5 @@
     "passport": "^0.3.2",
     "passport-jwt": "^2.1.0",
     "passport-local": "^1.0.0"
-  },
-  "scripts": {
-    "start": "node ./www.js",
-    "build": "grunt dist",
-    "postinstall": "./node_modules/bower/bin/bower install && npm run build"
-   }  
+  }
 }
