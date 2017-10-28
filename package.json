@@ -11,6 +11,8 @@
     "postinstall": "ionic-app-scripts build"
   },
   "dependencies": {
+    "@angular/tsc-wrapped": "^4.4.6",
+    "autoprefixer": "^7.1.6",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
