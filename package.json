@@ -7,8 +7,7 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "postinstall": "ionic-app-scripts build"
+    "start": "node server.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
