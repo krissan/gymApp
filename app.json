@@ -1,0 +1,7 @@
+{
+  "name": "A MEAN Ionic 2 gym App",
+  "description": "A simple Ionic 2 and MEAN gym App that's ready for Heroku",
+  "repository": "https://github.com/krissan/gymApp",
+  "logo": "http://ionicframework.com/img/ionic-logo-blog.png",
+  "keywords": ["ionic 2", "Angular 2", "node", "express", "heroku", "static"],
+}
