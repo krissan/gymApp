@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A gym Node.js app using Express 4",
   "engines": {
-    "node": "6.0.0"
+    "node": "6.11.5"
   },
   "main": "server.js",
   "scripts": {
@@ -32,17 +32,15 @@
     "mongoose": "^4.6.3",
     "morgan": "^1.7.0",
     "node": "^8.3.0",
-    "node-sass": "^4.5.3",
     "passport": "^0.3.2",
     "passport-jwt": "^2.1.0",
-    "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
+    "passport-local": "^1.0.0",
     "@angular/cli": "^1.4.9",
     "@angular/compiler": "^4.4.6",
     "@angular/compiler-cli": "^4.4.6",
     "@angular/tsc-wrapped": "^4.4.6",
     "@ionic/app-scripts": "^3.0.1",
     "rxjs": "^5.5.2"
-  }
+  },
+  "devDependencies": {}
 }
