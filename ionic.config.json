@@ -2,5 +2,7 @@
   "name": "gym-app",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {},
+  "v2": true,
+  "typescript": true
 }
