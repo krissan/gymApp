@@ -27,7 +27,7 @@ export class RoutinePage {
 
     //Instantiate form for routine inputs
     this.myForm = this._fb.group({
-      routineName: ['', [Validators.required, Validators.minLength(6)]],
+      routineName: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(20)]],
       subroutines: this._fb.array([])
     });
 
@@ -46,6 +46,10 @@ export class RoutinePage {
         this.routineO.sets.push(navParams.get('routine').sets[i]);
         this.addSubRoutine(false);
       }
+    }
+    else
+    {
+      this.addSubRoutine(true);
     }
   }
 
@@ -77,7 +81,7 @@ export class RoutinePage {
     //If 
     if (addSub == true)
     {
-      let rout = new SubRoutine("default",0,0);
+      let rout = new SubRoutine("",0,0);
       this.routineO.sets.push(rout);
     }
     const control = <FormArray>this.myForm.controls['subroutines'];
