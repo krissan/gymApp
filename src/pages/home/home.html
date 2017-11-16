@@ -4,15 +4,14 @@
     Routines
   </ion-title>
   <ion-buttons end>
-    <button ion-button icon-only (click)="addRoutine()"><ion-icon name="add"></ion-icon></button>
-  </ion-buttons>
-  <ion-buttons start>
     <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>
   </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <h1> {{useremail}} </h1>
+  <button ion-button icon-only (click)="addRoutine()"><ion-icon name="add"></ion-icon></button>
   <ion-card *ngFor="let rout of routines; let i=index">
       <ion-card-header>
         {{routines[i].routineName}}
@@ -35,4 +34,5 @@
         </ion-col>
       </ion-card-content>
   </ion-card>
+  <button *ngIf="routines.length >= 1" ion-button icon-only (click)="addRoutine()"><ion-icon name="add"></ion-icon></button>
 </ion-content>

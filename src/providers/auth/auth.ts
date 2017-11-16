@@ -65,6 +65,7 @@ export class AuthProvider {
           this.userid = data.user._id;
           this.storage.set('token', data.token);
           this.storage.set('userid', data.user._id);
+          this.storage.set('useremail', data.user.email);
           resolve(data); 
         }, (err) => {
           reject(err);
@@ -88,6 +89,9 @@ export class AuthProvider {
             this.userid = data.user._id;
             this.storage.set('token', data.token);
             this.storage.set('userid', data.user._id);
+                      console.log(data.user);
+
+            this.storage.set('useremail', data.user.email);
             resolve(data);
             resolve(res.json());
           }, (err) => {
@@ -101,5 +105,6 @@ export class AuthProvider {
   logout(){
     this.storage.set('token', '');
     this.storage.set('userid', '');
+    this.storage.set('useremail', '');
   }
 }

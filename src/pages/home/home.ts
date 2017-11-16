@@ -6,7 +6,7 @@ import { LoginPage } from '../login/login';
 import { RoutinePage} from '../routine/routine';
 import { RoutineModel } from '../../app/models/routine-model';
 import { SubRoutine } from '../../app/models/routine-model';
-
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
@@ -16,17 +16,24 @@ import { SubRoutine } from '../../app/models/routine-model';
 export class HomePage {
   //List of users routines
   routines: RoutineModel[]
+  //useremail
+  useremail: any;
   //Loading object
   loading: any;
 
   constructor(public navCtrl: NavController, public routineService: RoutinesProvider, public modalCtrl: ModalController,
-   public authService: AuthProvider, public loadingCtrl: LoadingController) {
- 
+   public authService: AuthProvider, public loadingCtrl: LoadingController, public storage: Storage) {
+   //instantiate routines
+   this.routines = [];
   }
 
   ionViewDidLoad(){
     //Retrieve users routines from server
     this.reloadRoutines();
+    //retrieve user email
+    this.storage.get('useremail').then((value) => {
+      this.useremail = value;
+    }); 
   }
 
   //Add routine

@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 105:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29,7 +29,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var RoutinePage = /** @class */ (function () {
+var RoutinePage = (function () {
     function RoutinePage(viewCtrl, navParams, _fb) {
         this.viewCtrl = viewCtrl;
         this.navParams = navParams;
@@ -93,21 +93,20 @@ var RoutinePage = /** @class */ (function () {
         control.removeAt(i);
         this.routineO.sets.splice(i, 1);
     };
-    RoutinePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-routine',template:/*ion-inline-start:"C:\Users\Krissan\Desktop\gymApp\src\pages\routine\routine.html"*/'<!--\n\n  Generated template for the RoutinePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Routine</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n	<form [formGroup]="myForm" novalidate (ngSubmit)="submitModal(myForm)">\n\n		<div class="form-group">\n\n			<label>Routine Name</label>\n\n			<input type="text" formControlName="routineName" value="{{routineO.routineName}}">\n\n\n\n			<small *ngIf="!myForm.controls.routineName.valid" class="text-danger">\n\n				Name is required (minimum 1 character, maximum).\n\n			</small>\n\n		</div>\n\n\n\n		<ion-card formArrayName="subroutines">\n\n			<ion-row>\n\n				<ion-col>\n\n				</ion-col>\n\n				<ion-col>\n\n					<ion-label>Set Exercise</ion-label>\n\n				</ion-col>\n\n				<ion-col>\n\n					<ion-label>Rep Amount</ion-label>\n\n				</ion-col>\n\n				<ion-col>\n\n					<ion-label>Set Time</ion-label>\n\n				</ion-col>\n\n				<ion-col>\n\n				</ion-col>\n\n			</ion-row>\n\n			<ion-card-content *ngFor="let rout of myForm.controls.subroutines.controls; let i=index">\n\n				<ion-row [formGroupName]="i">\n\n					<ion-col>\n\n						<ion-label>Set {{i+1}}</ion-label>\n\n					</ion-col>\n\n					<ion-col>\n\n						<ion-input type="text" formControlName="setExercise" placeholder="Exercise" value="{{routineO.sets[i].setExercise}}"></ion-input>\n\n						<small [hidden]="myForm.controls.subroutines.controls[i].controls.setExercise.valid">\n\n							Set Exercise is required\n\n						</small>\n\n					</ion-col>\n\n					<ion-col>\n\n						<ion-input type="number" formControlName="repAmount" min="0" value="{{routineO.sets[i].repAmount}}"></ion-input>\n\n					</ion-col>\n\n					<ion-col>\n\n						<ion-input type="number" formControlName="setTime" min="0" value="{{routineO.sets[i].setTime}}"></ion-input>\n\n					</ion-col>	\n\n					<ion-col>\n\n						<button ion-button color="danger" *ngIf="myForm.controls.subroutines.controls.length > 1" (click)="removeSubRoutine(i)"> <ion-icon name="trash"></ion-icon> </button>\n\n					</ion-col>			\n\n				</ion-row>\n\n			</ion-card-content>\n\n		</ion-card>\n\n\n\n        <div class="margin-20" *ngIf="myForm.controls.subroutines.controls.length < 10">\n\n          <a (click)="addSubRoutine(true)" style="cursor: default">\n\n            Add another set +\n\n          </a>\n\n        </div>\n\n        <button ion-button type="submit" [disabled]="!myForm.valid">Submit</button>\n\n	</form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Krissan\Desktop\gymApp\src\pages\routine\routine.html"*/,
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object])
-    ], RoutinePage);
     return RoutinePage;
-    var _a, _b, _c;
 }());
+RoutinePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-routine',template:/*ion-inline-start:"C:\Users\Krissan\Desktop\gymApp\src\pages\routine\routine.html"*/'<!--\n\n  Generated template for the RoutinePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Routine</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n	<form [formGroup]="myForm" novalidate (ngSubmit)="submitModal(myForm)">\n\n		<div class="form-group">\n\n			<label>Routine Name</label>\n\n			<input type="text" formControlName="routineName" value="{{routineO.routineName}}">\n\n\n\n			<small *ngIf="!myForm.controls.routineName.valid" class="text-danger">\n\n				Name is required (minimum 1 character, maximum).\n\n			</small>\n\n		</div>\n\n\n\n		<ion-card formArrayName="subroutines">\n\n			<ion-row>\n\n				<ion-col>\n\n				</ion-col>\n\n				<ion-col>\n\n					<ion-label>Set Exercise</ion-label>\n\n				</ion-col>\n\n				<ion-col>\n\n					<ion-label>Rep Amount</ion-label>\n\n				</ion-col>\n\n				<ion-col>\n\n					<ion-label>Set Time</ion-label>\n\n				</ion-col>\n\n				<ion-col>\n\n				</ion-col>\n\n			</ion-row>\n\n			<ion-card-content *ngFor="let rout of myForm.controls.subroutines.controls; let i=index">\n\n				<ion-row [formGroupName]="i">\n\n					<ion-col>\n\n						<ion-label>Set {{i+1}}</ion-label>\n\n					</ion-col>\n\n					<ion-col>\n\n						<ion-input type="text" formControlName="setExercise" placeholder="Exercise" value="{{routineO.sets[i].setExercise}}"></ion-input>\n\n						<small [hidden]="myForm.controls.subroutines.controls[i].controls.setExercise.valid">\n\n							Set Exercise is required\n\n						</small>\n\n					</ion-col>\n\n					<ion-col>\n\n						<ion-input type="number" formControlName="repAmount" min="0" value="{{routineO.sets[i].repAmount}}"></ion-input>\n\n					</ion-col>\n\n					<ion-col>\n\n						<ion-input type="number" formControlName="setTime" min="0" value="{{routineO.sets[i].setTime}}"></ion-input>\n\n					</ion-col>	\n\n					<ion-col>\n\n						<button ion-button color="danger" *ngIf="myForm.controls.subroutines.controls.length > 1" (click)="removeSubRoutine(i)"> <ion-icon name="trash"></ion-icon> </button>\n\n					</ion-col>			\n\n				</ion-row>\n\n			</ion-card-content>\n\n		</ion-card>\n\n\n\n        <div class="margin-20" *ngIf="myForm.controls.subroutines.controls.length < 10">\n\n          <a (click)="addSubRoutine(true)" style="cursor: default">\n\n            Add another set +\n\n          </a>\n\n        </div>\n\n        <button ion-button type="submit" [disabled]="!myForm.valid">Submit</button>\n\n	</form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Krissan\Desktop\gymApp\src\pages\routine\routine.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]])
+], RoutinePage);
 
 //# sourceMappingURL=routine.js.map
 
 /***/ }),
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -115,7 +114,7 @@ var RoutinePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(83);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -135,7 +134,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var SignupPage = /** @class */ (function () {
+var SignupPage = SignupPage_1 = (function () {
     function SignupPage(navCtrl, navParams, authService, loadingCtrl, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -143,7 +142,6 @@ var SignupPage = /** @class */ (function () {
         this.loadingCtrl = loadingCtrl;
         this.alertCtrl = alertCtrl;
     }
-    SignupPage_1 = SignupPage;
     SignupPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad SignupPage');
     };
@@ -212,21 +210,21 @@ var SignupPage = /** @class */ (function () {
     SignupPage.prototype.launchLogin = function () {
         this.navCtrl.pop();
     };
-    SignupPage = SignupPage_1 = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-signup',template:/*ion-inline-start:"C:\Users\Krissan\Desktop\gymApp\src\pages\signup\signup.html"*/'<!--\n\n  Generated template for the SignupPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="secondary">\n\n    <ion-title>SignupPage</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-row class="account-form">\n\n        <ion-col>\n\n            <ion-list inset>\n\n \n\n                <ion-item>\n\n                    <ion-label><ion-icon name="mail"></ion-icon></ion-label>\n\n                    <ion-input [(ngModel)]="email" placeholder="Email" type="email" value="krissan32@hotmail.com"></ion-input>\n\n                </ion-item>\n\n \n\n                <ion-item>\n\n                    <ion-label><ion-icon name="lock"></ion-icon></ion-label>\n\n                    <ion-input [(ngModel)]="password" placeholder="Password" type="password" value="arkark12"></ion-input>\n\n                </ion-item>\n\n \n\n                <ion-item>\n\n                    <ion-label><ion-icon name="lock"></ion-icon></ion-label>\n\n                    <ion-input [(ngModel)]="passwordAgain" placeholder="Password" type="password"value="arkark12"></ion-input>\n\n                </ion-item>\n\n\n\n                <ion-item>\n\n                    <ion-label>Role</ion-label>\n\n                    <ion-select [(ngModel)]="role">\n\n                        <ion-option value="normal" selected>normal</ion-option>\n\n                        <ion-option value="super">super</ion-option>\n\n                    </ion-select>\n\n                </ion-item>\n\n \n\n            </ion-list>\n\n \n\n            <button ion-button (click)="register()" class="continue-button">Register</button>\n\n 			<button ion-button (click)="launchLogin()" class="continue-button">Cancel</button>\n\n        </ion-col>\n\n    </ion-row>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Krissan\Desktop\gymApp\src\pages\signup\signup.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-    ], SignupPage);
     return SignupPage;
-    var SignupPage_1;
 }());
+SignupPage = SignupPage_1 = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-signup',template:/*ion-inline-start:"C:\Users\Krissan\Desktop\gymApp\src\pages\signup\signup.html"*/'<!--\n\n  Generated template for the SignupPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="secondary">\n\n    <ion-title>SignupPage</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-row class="account-form">\n\n        <ion-col>\n\n            <ion-list inset>\n\n \n\n                <ion-item>\n\n                    <ion-label><ion-icon name="mail"></ion-icon></ion-label>\n\n                    <ion-input [(ngModel)]="email" placeholder="Email" type="email"></ion-input>\n\n                </ion-item>\n\n \n\n                <ion-item>\n\n                    <ion-label><ion-icon name="lock"></ion-icon></ion-label>\n\n                    <ion-input [(ngModel)]="password" placeholder="Password" type="password"></ion-input>\n\n                </ion-item>\n\n \n\n                <ion-item>\n\n                    <ion-label><ion-icon name="lock"></ion-icon></ion-label>\n\n                    <ion-input [(ngModel)]="passwordAgain" placeholder="Password"></ion-input>\n\n                </ion-item>\n\n\n\n                <ion-item>\n\n                    <ion-label>Role</ion-label>\n\n                    <ion-select [(ngModel)]="role">\n\n                        <ion-option value="normal" selected>normal</ion-option>\n\n                        <ion-option value="super">super</ion-option>\n\n                    </ion-select>\n\n                </ion-item>\n\n \n\n            </ion-list>\n\n \n\n            <button ion-button (click)="register()" class="continue-button">Register</button>\n\n 			<button ion-button (click)="launchLogin()" class="continue-button">Cancel</button>\n\n        </ion-col>\n\n    </ion-row>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Krissan\Desktop\gymApp\src\pages\signup\signup.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], SignupPage);
 
+var SignupPage_1;
 //# sourceMappingURL=signup.js.map
 
 /***/ }),
 
-/***/ 116:
+/***/ 117:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -239,11 +237,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 116;
+webpackEmptyAsyncContext.id = 117;
 
 /***/ }),
 
-/***/ 158:
+/***/ 159:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -271,7 +269,7 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 158;
+webpackAsyncContext.id = 159;
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -305,7 +303,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-var RoutinesProvider = /** @class */ (function () {
+var RoutinesProvider = (function () {
     function RoutinesProvider(http, authService) {
         this.http = http;
         this.authService = authService;
@@ -371,12 +369,12 @@ var RoutinesProvider = /** @class */ (function () {
             });
         });
     };
-    RoutinesProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_2__auth_auth__["a" /* AuthProvider */]])
-    ], RoutinesProvider);
     return RoutinesProvider;
 }());
+RoutinesProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_2__auth_auth__["a" /* AuthProvider */]])
+], RoutinesProvider);
 
 //# sourceMappingURL=routines.js.map
 
@@ -410,11 +408,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_signup_signup__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_routine_routine__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_signup_signup__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_routine_routine__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_auth_auth__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_routines_routines__ = __webpack_require__(161);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -439,51 +437,51 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AppModule = /** @class */ (function () {
+var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["L" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_signup_signup__["a" /* SignupPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_routine_routine__["a" /* RoutinePage */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_forms__["e" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */], {}, {
-                    links: [
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/routine/routine.module#RoutinePageModule', name: 'RoutinePage', segment: 'routine', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] }
-                    ]
-                }),
-                __WEBPACK_IMPORTED_MODULE_9__ionic_storage__["a" /* IonicStorageModule */].forRoot()
-            ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicApp */]],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_signup_signup__["a" /* SignupPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_routine_routine__["a" /* RoutinePage */]
-            ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_14__providers_auth_auth__["a" /* AuthProvider */],
-                __WEBPACK_IMPORTED_MODULE_15__providers_routines_routines__["a" /* RoutinesProvider */]
-            ]
-        })
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_login_login__["a" /* LoginPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_signup_signup__["a" /* SignupPage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_routine_routine__["a" /* RoutinePage */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_forms__["e" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */], {}, {
+                links: [
+                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/routine/routine.module#RoutinePageModule', name: 'RoutinePage', segment: 'routine', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] }
+                ]
+            }),
+            __WEBPACK_IMPORTED_MODULE_9__ionic_storage__["a" /* IonicStorageModule */].forRoot()
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicApp */]],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_login_login__["a" /* LoginPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_signup_signup__["a" /* SignupPage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_routine_routine__["a" /* RoutinePage */]
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
+            { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicErrorHandler */] },
+            __WEBPACK_IMPORTED_MODULE_14__providers_auth_auth__["a" /* AuthProvider */],
+            __WEBPACK_IMPORTED_MODULE_15__providers_routines_routines__["a" /* RoutinesProvider */]
+        ]
+    })
+], AppModule);
 
 //# sourceMappingURL=app.module.js.map
 
@@ -513,7 +511,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var MyApp = /** @class */ (function () {
+var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
         this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
         platform.ready().then(function () {
@@ -523,13 +521,13 @@ var MyApp = /** @class */ (function () {
             splashScreen.hide();
         });
     }
-    MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Krissan\Desktop\gymApp\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Krissan\Desktop\gymApp\src\app\app.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
-    ], MyApp);
     return MyApp;
 }());
+MyApp = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Krissan\Desktop\gymApp\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Krissan\Desktop\gymApp\src\app\app.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+], MyApp);
 
 //# sourceMappingURL=app.component.js.map
 
@@ -542,7 +540,7 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -564,7 +562,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-var AuthProvider = /** @class */ (function () {
+var AuthProvider = (function () {
     function AuthProvider(http, storage) {
         this.http = http;
         this.storage = storage;
@@ -613,6 +611,7 @@ var AuthProvider = /** @class */ (function () {
                 _this.userid = data.user._id;
                 _this.storage.set('token', data.token);
                 _this.storage.set('userid', data.user._id);
+                _this.storage.set('useremail', data.user.email);
                 resolve(data);
             }, function (err) {
                 reject(err);
@@ -632,6 +631,8 @@ var AuthProvider = /** @class */ (function () {
                 _this.userid = data.user._id;
                 _this.storage.set('token', data.token);
                 _this.storage.set('userid', data.user._id);
+                console.log(data.user);
+                _this.storage.set('useremail', data.user.email);
                 resolve(data);
                 resolve(res.json());
             }, function (err) {
@@ -643,13 +644,14 @@ var AuthProvider = /** @class */ (function () {
     AuthProvider.prototype.logout = function () {
         this.storage.set('token', '');
         this.storage.set('userid', '');
+        this.storage.set('useremail', '');
     };
-    AuthProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
-    ], AuthProvider);
     return AuthProvider;
 }());
+AuthProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+], AuthProvider);
 
 //# sourceMappingURL=auth.js.map
 
@@ -662,7 +664,7 @@ var AuthProvider = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return SubRoutine; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoutineModel; });
 //Model for sets in routine model
-var SubRoutine = /** @class */ (function () {
+var SubRoutine = (function () {
     function SubRoutine(sE, rA, sA) {
         this.setExercise = sE;
         this.repAmount = rA;
@@ -672,7 +674,7 @@ var SubRoutine = /** @class */ (function () {
 }());
 
 //Model
-var RoutineModel = /** @class */ (function () {
+var RoutineModel = (function () {
     function RoutineModel(rn, sets, rid) {
         this.routineName = rn;
         this.sets = sets;
@@ -693,8 +695,8 @@ var RoutineModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -715,7 +717,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var LoginPage = /** @class */ (function () {
+var LoginPage = (function () {
     function LoginPage(navCtrl, navParams, authService, loadingCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -769,20 +771,20 @@ var LoginPage = /** @class */ (function () {
         });
         this.loading.present();
     };
-    LoginPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Krissan\Desktop\gymApp\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="secondary">\n\n    <ion-title>Login Page</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-card color="secondary">\n\n      <ion-card-content>\n\n      A MEAN stack app, created to allow for users to create, track and edit gym routines.\n\n\n\n      The following login info is provided by default for allowing access to core functionality of the app.\n\n\n\n      The code for this site can be found in the following <a href="https://github.com/krissan/gymApp">repository.</a>\n\n      </ion-card-content>\n\n    </ion-card>\n\n    <ion-row class="login-form">\n\n        <ion-col>\n\n            <ion-list inset>\n\n \n\n              <ion-item>\n\n                <ion-label><ion-icon name="person"></ion-icon></ion-label>\n\n                <ion-input [(ngModel)]="email" placeholder="email" type="text" value="krissan32@hotmail.com"></ion-input>\n\n              </ion-item>\n\n \n\n              <ion-item>\n\n                <ion-label><ion-icon name="lock"></ion-icon></ion-label>\n\n                <ion-input [(ngModel)]="password" placeholder="password" type="password" value="arkark12"></ion-input>\n\n              </ion-item>\n\n \n\n            </ion-list>\n\n \n\n            <button ion-button full (click)="login()" class="login-button">Login</button>\n\n \n\n        </ion-col>\n\n    </ion-row>\n\n \n\n    <ion-row>\n\n        <ion-col>\n\n            <button ion-button (click)="launchSignup()" class="create-account">Create an Account</button>\n\n        </ion-col>\n\n    </ion-row>\n\n \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Krissan\Desktop\gymApp\src\pages\login\login.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
-    ], LoginPage);
     return LoginPage;
 }());
+LoginPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-login',template:/*ion-inline-start:"C:\Users\Krissan\Desktop\gymApp\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="secondary">\n\n    <ion-title>Login Page</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-card color="secondary">\n\n      <ion-card-content>\n\n      A MEAN stack app, created to allow for users to create, track and edit gym routines.\n\n\n\n      The following login info is provided by default for allowing access to core functionality of the app.\n\n\n\n      The code for this site can be found in the following <a href="https://github.com/krissan/gymApp">repository.</a>\n\n      </ion-card-content>\n\n    </ion-card>\n\n    <ion-row class="login-form">\n\n        <ion-col>\n\n            <ion-list inset>\n\n \n\n              <ion-item>\n\n                <ion-label><ion-icon name="person"></ion-icon></ion-label>\n\n                <ion-input [(ngModel)]="email" placeholder="email" type="text" value="guest@mail.com"></ion-input>\n\n              </ion-item>\n\n \n\n              <ion-item>\n\n                <ion-label><ion-icon name="lock"></ion-icon></ion-label>\n\n                <ion-input [(ngModel)]="password" placeholder="password" type="password" value="guestPass12"></ion-input>\n\n              </ion-item>\n\n \n\n            </ion-list>\n\n \n\n            <button ion-button full (click)="login()" class="login-button">Login</button>\n\n \n\n        </ion-col>\n\n    </ion-row>\n\n \n\n    <ion-row>\n\n        <ion-col>\n\n            <button ion-button (click)="launchSignup()" class="create-account">Create an Account</button>\n\n        </ion-col>\n\n    </ion-row>\n\n \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Krissan\Desktop\gymApp\src\pages\login\login.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
+], LoginPage);
 
 //# sourceMappingURL=login.js.map
 
 /***/ }),
 
-/***/ 82:
+/***/ 83:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -792,8 +794,9 @@ var LoginPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_routines_routines__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__routine_routine__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__routine_routine__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_models_routine_model__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(82);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -811,17 +814,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, routineService, modalCtrl, authService, loadingCtrl) {
+
+var HomePage = (function () {
+    function HomePage(navCtrl, routineService, modalCtrl, authService, loadingCtrl, storage) {
         this.navCtrl = navCtrl;
         this.routineService = routineService;
         this.modalCtrl = modalCtrl;
         this.authService = authService;
         this.loadingCtrl = loadingCtrl;
+        this.storage = storage;
+        //instantiate routines
+        this.routines = [];
     }
     HomePage.prototype.ionViewDidLoad = function () {
+        var _this = this;
         //Retrieve users routines from server
         this.reloadRoutines();
+        //retrieve user email
+        this.storage.get('useremail').then(function (value) {
+            _this.useremail = value;
+        });
     };
     //Add routine
     HomePage.prototype.addRoutine = function () {
@@ -931,16 +943,16 @@ var HomePage = /** @class */ (function () {
         //Reroute to login page
         this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__login_login__["a" /* LoginPage */]);
     };
-    HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Krissan\Desktop\gymApp\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="secondary">\n\n  <ion-title>\n\n    Routines\n\n  </ion-title>\n\n  <ion-buttons end>\n\n    <button ion-button icon-only (click)="addRoutine()"><ion-icon name="add"></ion-icon></button>\n\n  </ion-buttons>\n\n  <ion-buttons start>\n\n    <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>\n\n  </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card *ngFor="let rout of routines; let i=index">\n\n      <ion-card-header>\n\n        {{routines[i].routineName}}\n\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <ion-row *ngFor="let set of routines[i].sets; let j=index">\n\n      		<ion-col fixed>Set Name: {{routines[i].sets[j].setExercise}}</ion-col>\n\n      		<ion-col fixed>Rep Count: {{routines[i].sets[j].repAmount}}</ion-col>\n\n      		<ion-col fixed>Set Time: {{routines[i].sets[j].setTime}}</ion-col>\n\n        </ion-row>\n\n        <ion-col>\n\n          <button ion-button color="danger" (click)="deleteRoutine(routines[i])">\n\n              <ion-icon name="trash"></ion-icon>\n\n              Delete\n\n          </button>\n\n          <button ion-button color="balanced" (click)="editRoutine(routines[i])">\n\n              <ion-icon md="md-create"></ion-icon>\n\n              Edit\n\n          </button>\n\n        </ion-col>\n\n      </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Krissan\Desktop\gymApp\src\pages\home\home.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_routines_routines__["a" /* RoutinesProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
-    ], HomePage);
     return HomePage;
 }());
+HomePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\Krissan\Desktop\gymApp\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="secondary">\n\n  <ion-title>\n\n    Routines\n\n  </ion-title>\n\n  <ion-buttons end>\n\n    <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>\n\n  </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h1> {{useremail}} </h1>\n\n  <button ion-button icon-only (click)="addRoutine()"><ion-icon name="add"></ion-icon></button>\n\n  <ion-card *ngFor="let rout of routines; let i=index">\n\n      <ion-card-header>\n\n        {{routines[i].routineName}}\n\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <ion-row *ngFor="let set of routines[i].sets; let j=index">\n\n      		<ion-col fixed>Set Name: {{routines[i].sets[j].setExercise}}</ion-col>\n\n      		<ion-col fixed>Rep Count: {{routines[i].sets[j].repAmount}}</ion-col>\n\n      		<ion-col fixed>Set Time: {{routines[i].sets[j].setTime}}</ion-col>\n\n        </ion-row>\n\n        <ion-col>\n\n          <button ion-button color="danger" (click)="deleteRoutine(routines[i])">\n\n              <ion-icon name="trash"></ion-icon>\n\n              Delete\n\n          </button>\n\n          <button ion-button color="balanced" (click)="editRoutine(routines[i])">\n\n              <ion-icon md="md-create"></ion-icon>\n\n              Edit\n\n          </button>\n\n        </ion-col>\n\n      </ion-card-content>\n\n  </ion-card>\n\n  <button *ngIf="routines.length >= 1" ion-button icon-only (click)="addRoutine()"><ion-icon name="add"></ion-icon></button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Krissan\Desktop\gymApp\src\pages\home\home.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_routines_routines__["a" /* RoutinesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_routines_routines__["a" /* RoutinesProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */]) === "function" && _f || Object])
+], HomePage);
 
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=home.js.map
 
 /***/ })
